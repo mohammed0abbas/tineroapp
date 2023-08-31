@@ -1,12 +1,18 @@
 import React from 'react';
 import img from './shape.png'
 import logo from './logo.png'
+import {Contx} from '../../App'
 
 const Header = () => {
+    const contx = React.useContext(Contx)
+
+   
+
 
     const nav = ['Home', 'Explores', 'Call Us','About']
     return (
         <div className='pt-5' style={HeaderStyle}>
+           
 
          <div className="continer">
             <div className="row"
@@ -44,14 +50,18 @@ const Header = () => {
                 })
                 }</ul>
                 <div className="col-2">
-                    <select name="" id="" style={{
+                    <select name="" id="" 
+                    
+                    onChange={(e)=>contx.setLang(e.target.value)}
+                    
+                    style={{
                         padding: '10px',
                         borderRadius: '26px',
                         fontSize: '1.5vw',
                         color: '#068BA8',
                     }}>
-                        <option value="">English</option>
-                        <option value="">عربي</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
                     </select>
                 </div>
             </div>
