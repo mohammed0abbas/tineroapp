@@ -22,7 +22,7 @@ const About = () => {
                     </p>
                 </div>
                 <div className="col-12 col-lg-5 p-0 m-0">
-                    <img src={img} className='col-12 p-0 m-0' alt="" />
+                    <img src={img} className='col-12 p-0 m-0' loading='lazy' alt="" />
                 </div>
           
 

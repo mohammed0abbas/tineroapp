@@ -38,7 +38,7 @@ const Adv1 = () => {
                                         border: '4px solid #1E8BA8',
                                         px: 4,
                                     }}>
-                                        <img src={item} alt="" className='col-12' />
+                                        <img src={item} alt="" className='col-12' loading='lazy'/>
                                     </Box>
 
                                     <Typography variant='h6' className='text-center mt-3' sx={{

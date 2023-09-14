@@ -37,7 +37,7 @@ const Prodect1 = () => {
 
                     </Grid>
                     <Grid item xs={12} md={5}>
-                        <img src={img} className='col-12' alt="" />
+                        <img src={img} className='col-12' alt="" loading='lazy'/>
                     </Grid>
                 </Grid>
 
