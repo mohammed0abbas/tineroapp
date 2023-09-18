@@ -2,6 +2,7 @@ import React from 'react';
 import img from './shape.png'
 import logo from './logo.png'
 import {Contx} from '../../App'
+import { Link } from '@mui/material';
 
 const Header = () => {
     const contx = React.useContext(Contx)
@@ -9,17 +10,18 @@ const Header = () => {
    
 
 
-    const nav = ['Home', 'Explores', 'Call Us','About']
+    const nav = contx.lang === 'en' ? ['About', 'Products','Contact'] : ['Acerca de', 'Productos','Contacto']
+    const links = [ 'About', 'Products','Contact']
     return (
-        <div className='pt-5' style={HeaderStyle}>
+        <div className='pt-3' style={HeaderStyle}>
            
 
-         <div className="continer">
+         
             <div className="row"
             style={{
                 display: 'flex',
              
-                alignItems: 'center',
+                alignItems: 'space-between',
                 width: '100%',
                 
                 padding: '0 5vmin',
@@ -31,25 +33,42 @@ const Header = () => {
                 <div className="col-2">
                     <img src={logo} className='col-12' alt="" />
                 </div>
+
                 <ul className='col-8 row'>
                 {nav.map((item, index) => {
                     return (
+                        
+                       
+
+                       
                         <li key={index} className="col" style={{
                             listStyle: 'none',
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                            
-                            margin: '0px',
-                            padding: '0px',
+                            margin: '3%',
+                            padding: '3%',
                            
                         }}>
-                            <h6 className='text-white m-0 p-0' style={{fontSize:'2.3vw', borderBottom: '2px solid #fff ',}}>{item}</h6>
-                        </li>
+                             <Link key={index} href={`#${links[index]}`} underline='none' >
+                            <h6 className='text-white m-0 pb-1' style={{fontSize:'1.8vw', borderBottom: '2px solid #fff '}}>{item}</h6>
+                        </Link>
+                         </li>
+                       
                     )
                 })
                 }</ul>
-                <div className="col-2">
+
+
+                <div className="col-2"
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+                
+                >
                     <select name="" id="" 
                     
                     onChange={(e)=>contx.setLang(e.target.value)}
@@ -60,13 +79,14 @@ const Header = () => {
                         fontSize: '1.5vw',
                         color: '#068BA8',
                     }}>
-                        <option value="en">English</option>
+                        
                         <option value="es">Español</option>
+                        <option value="en">English</option>
                     </select>
                 </div>
             </div>
                 
-         </div>
+         
         </div>
     );
 }

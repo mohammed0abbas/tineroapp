@@ -20,6 +20,7 @@ const Home = () => {
             backgroundImage: `url(${bg})`,
             backgroundSize:'cover',
             backgroundPosition:'top',
+            zIndex:'-1',
         }}>
             <Header />
             <Slider />

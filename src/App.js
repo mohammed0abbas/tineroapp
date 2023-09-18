@@ -16,7 +16,7 @@ function App() {
   }, [])
 
 
-  const [lang, setLang] = React.useState('en')
+  const [lang, setLang] = React.useState('es')
   return (<>
 
 

@@ -6,15 +6,18 @@ import img3 from './3.png'
 import img4 from './4.png'
 import img5 from './5.png'
 import arr from './Arrow.png'
+import { Contx } from '../../../App'
 
 import imgad from './Group 8 (2).png'
 import { Container, Grid, Box, Typography } from '@mui/material';
 
 
 const Adv1 = () => {
+    const {lang} = React.useContext(Contx)
+    const data = lang === 'en' ? en : es
     const imgadv = [img1, img2, img3, img4, img5]
     return (
-        <div className='row p-5 m-0 my-4' style={{
+        <div id='Products' className='row p-5 m-0 my-4' style={{
             backgroundImage: `url(${img})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -46,7 +49,7 @@ const Adv1 = () => {
                                         fontWeight: 'bold',
                                         fontSize: '1.2rem'
                                     }}>
-                                       {en[index]}
+                                       {data[index]}
                                     </Typography>
 
 
@@ -79,4 +82,17 @@ const en = [
     `Hialuronidase`,
     `EYECONTOUR COCKTAIL`,
     `WHITENING COCKTAIL`,
+]
+
+const es = [
+    `Ácido Hialurónico`,
+     
+    `COCTEL PARA EL CABELLO`,
+
+    
+    `Hialuronidasa`,
+    `CÓCTEL PARA CONTORNO DE OJOS`,
+    `WHITENING COCKTAIL`,
+
+
 ]
